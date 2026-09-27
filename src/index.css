@@ -1,0 +1,74 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Fixed palette (same in both themes) */
+  --color-ocean-950: #03171c;
+  --color-ocean-900: #062a33;
+  --color-sand: #f4ead5;
+  --color-lagoon-bright: #2ec4b6;
+
+  /* Theme tokens — values swap between light and dark below */
+  --color-canvas: var(--canvas);
+  --color-canvas-alt: var(--canvas-alt);
+  --color-surface: var(--surface);
+  --color-raised: var(--raised);
+  --color-fg: var(--fg);
+  --color-lagoon: var(--lagoon);
+  --color-coral: var(--coral);
+  --color-brass: var(--brass);
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-blink: blink 1s step-end infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
+  --canvas: #faf6ee;
+  --canvas-alt: #f1e8d6;
+  --surface: #fffdf8;
+  --raised: #e3efe9;
+  --fg: #0b2a31;
+  --lagoon: #0b7f74;
+  --coral: #e5532e;
+  --brass: #9c6a12;
+}
+
+.dark {
+  color-scheme: dark;
+  --canvas: #062a33;
+  --canvas-alt: #03171c;
+  --surface: #062a33;
+  --raised: #0a3a46;
+  --fg: #f4ead5;
+  --lagoon: #2ec4b6;
+  --coral: #ff6b4a;
+  --brass: #d4a24c;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  @apply bg-canvas font-sans text-fg antialiased transition-colors duration-300;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
