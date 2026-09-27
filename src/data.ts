@@ -1,15 +1,3 @@
-export type EventKind = 'Meetup' | 'Workshop' | 'Hackathon'
-
-export interface CommunityEvent {
-  id: number
-  kind: EventKind
-  title: string
-  date: string
-  time: string
-  venue: string
-  blurb: string
-}
-
 export const navLinks = [
   { href: '#about', label: 'About' },
   { href: '#programs', label: 'Programs' },
@@ -55,54 +43,6 @@ export const programs = [
     icon: '💼',
     title: 'Jobs & Gigs Board',
     text: 'Connect with startups, NGOs and remote teams looking for talent from the islands.',
-  },
-]
-
-export const events: CommunityEvent[] = [
-  {
-    id: 1,
-    kind: 'Meetup',
-    title: 'Dev Night: Building for Low Bandwidth',
-    date: '2026-10-15',
-    time: '18:00',
-    venue: 'Stone Town, Zanzibar',
-    blurb: 'Offline-first patterns, PWAs and USSD integrations that work where connectivity does not.',
-  },
-  {
-    id: 2,
-    kind: 'Workshop',
-    title: 'Intro to Mobile Money APIs',
-    date: '2026-10-25',
-    time: '10:00',
-    venue: 'Mwanakwerekwe Tech Hub',
-    blurb: 'Integrate payments end-to-end: sandbox setup, callbacks, reconciliation and security.',
-  },
-  {
-    id: 3,
-    kind: 'Hackathon',
-    title: 'Blue Economy Hack 2026',
-    date: '2026-11-13',
-    time: '09:00',
-    venue: 'Michenzani, Zanzibar',
-    blurb: '48 hours to build tools for fishers, seaweed farmers and coastal communities.',
-  },
-  {
-    id: 4,
-    kind: 'Workshop',
-    title: 'AI in Kiswahili: Hands-on with LLMs',
-    date: '2026-11-28',
-    time: '10:00',
-    venue: 'Online + Stone Town',
-    blurb: 'Prompting, evaluation and building simple assistants that understand Kiswahili.',
-  },
-  {
-    id: 5,
-    kind: 'Meetup',
-    title: 'Pemba Dev Meetup',
-    date: '2026-12-05',
-    time: '16:00',
-    venue: 'Chake Chake, Pemba',
-    blurb: 'Our first meetup in Pemba — show-and-tell, career chat and community planning.',
   },
 ]
 
